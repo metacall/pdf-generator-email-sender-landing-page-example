@@ -1,0 +1,5 @@
+{
+    "language_id": "file",
+    "path": ".",
+    "scripts": ["index.html","dist/css/style.css","dist/js/main.min.js"]
+}
