@@ -13,3 +13,7 @@ const sendEmail = email => {
   };
   sgMail.send(msg);
 }
+
+module.exports = {
+  sendEmail
+}
