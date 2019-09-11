@@ -306,7 +306,8 @@
             var http = new XMLHttpRequest();
 
             // TODO: Avoid obtaining the url like this
-            var url = window.location.pathname.split('/').slice(1).slice(0, 5 - args.length).concat('call', 'send_email').join('/');
+            var args = window.location.pathname.split('/').slice(1);
+            var url = args.slice(0, 4 - args.length).concat('call', 'send_email').join('/');
             // var url = '/call/send_email';
 
             http.open('POST', url, true);
