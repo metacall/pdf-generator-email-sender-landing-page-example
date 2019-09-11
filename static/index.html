@@ -295,17 +295,18 @@
             </div>
         </footer>
     </div>
-    <script src="/static/dist/js/main.min.js"></script>
+    <!-- TODO: Avoid hard-coding this -->
+    <script src="/viferga/v1/metacall/pdf-generator-email-sender-landing-page-example/static/dist/js/main.min.js"></script>
+    <!-- <script src="/static/dist/js/main.min.js"></script> -->
     <script>
         function send_early_access() {
             var http = new XMLHttpRequest();
 
-            // This will try to teake username from url
-            var username = window.location.pathname.split('/')[1];
-            var version = 'v1';
-            var deployment = 'metacall/pdf-generator-email-sender-landing-page-example';
+            // TODO: Avoid obtaining the url like this
+            var url = window.location.pathname.split('/').slice(1).slice(0, 5 - args.length).concat('call', 'send_email').join('/');
+            // var url = '/call/send_email';
 
-            http.open('POST', `/${username}/${deployment}/${version}/call/send_email`, true);
+            http.open('POST', url, true);
 
             http.addEventListener('load', function() {
                 if (this.readyState == 4 && this.status == 200) {
