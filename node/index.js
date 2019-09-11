@@ -2,7 +2,7 @@ const { metacall, metacall_load_from_file } = require('metacall');
 const sgMail = require('@sendgrid/mail');
 
 // Load Python App
-metacall_load_from_file('py', '../python/app.py');
+metacall_load_from_file('py', '../python/pdf.py');
 
 // Set up sendgrid API key
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
