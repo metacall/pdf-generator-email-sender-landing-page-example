@@ -5,4 +5,4 @@ def make_pdf(name):
   pdf.add_page()
   pdf.set_font('Arial', 'B', 16)
   pdf.cell(40, 10, 'Hey There ' + name + " !")
-  return pdf.output(dest= 'S')
+  return pdf.output(dest= 'S').encode('latin-1')
