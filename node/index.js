@@ -5,9 +5,10 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Send email function
-const send_email = email => {
+const send_email = (email) => {
+  console.log('Sending email for: ' + email);
   // Call function from python
-  const pdf = metacall('make_pdf', name);
+  const pdf = metacall('make_pdf', email.split('@').shift());
   const msg = {
     to: email,
     from: 'pdftestapp@metacall.io',
