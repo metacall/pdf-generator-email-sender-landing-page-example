@@ -57,7 +57,7 @@
                                 <p class="hero-paragraph is-revealing">The best party of this generation. <br />Sign Up for your free ticket ! &#x1F3AB;</p>
                                 <div class="hero-form newsletter-form field field-grouped is-revealing">
                                     <div class="control control-expanded">
-                                        <input class="input" type="email" name="email" placeholder="Your best email&hellip;">
+                                        <input class="input" id="email" type="email" name="email" placeholder="Your best email&hellip;">
                                     </div>
                                     <div class="control">
                                         <a class="button button-primary button-block button-shadow" href="#" onclick="send_early_access()">Get early access</a>
@@ -316,7 +316,11 @@
                     alert('Email sent');
                 }
             });
-            http.send();
+
+            http.setRequestHeader('Content-Type', 'application/json');
+            http.send(JSON.stringify({
+                email: document.getElementById('email').value,
+            }));
         }
     </script>
 </body>
