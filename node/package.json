@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^6.4.0",
-    "metacall": "^0.1.1"
+    "@sendgrid/mail": "^6.4.0"
   }
 }
